@@ -8,14 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var dogs = [Dog]()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationView {
+            List(dogs) { dog in
+                ForEach(dog.breeds, id: \.name) { breed in
+                    Text("\(breed.name)")
+                }
+            }.onAppear() {
+                Api().loadData { (dogs) in
+                    self.dogs = dogs
+                }
+            }.navigationTitle("Dog List")
         }
-        .padding()
     }
 }
 
