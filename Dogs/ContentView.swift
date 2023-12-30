@@ -9,19 +9,33 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @State private var isActiveDogView: Bool = false
+    @State private var isActiveDogDetailView: Bool = false
+    
     @State var dogs = [Dog]()
     
+    @State var selectedDog: Dog?
+    
     var body: some View {
-        NavigationView {
-            List(dogs) { dog in
-                ForEach(dog.breeds, id: \.name) { breed in
-                    Text("\(breed.name)")
+        
+        NavigationSplitView {
+            DogView()
+            //        } content: {
+            //            if let selectedDog {
+            //                EditablePaletteList(dog: selectedDog)
+            //            }
+            //            Text("Choose a store")
+            //        } 
+                .toolbar {
+                    ToolbarItemGroup(placement: .bottomBar) {
+                        NavigationLink(destination: RandomDogView()) {
+                            Text("Dog of the moment")
+                        }
+                        
+                    }
                 }
-            }.onAppear() {
-                Api().loadData { (dogs) in
-                    self.dogs = dogs
-                }
-            }.navigationTitle("Dog List")
+        } detail: {
+            Text("Choose a dog")
         }
     }
 }
