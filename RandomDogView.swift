@@ -14,12 +14,10 @@ struct RandomDogView: View {
     @State var dogs = [Dog]()
     
     var body: some View {
-        VStack {
-            Text("Dog of the moment")
-            
-            if let dog = dogs.first {
-                NavigationLink(value: dog.id) {
-                    VStack {
+        NavigationView {
+            VStack(alignment: .leading, spacing: 10) {
+                if let dog = dogs.first {
+                    VStack(alignment: .leading, spacing: 10) {
                         AsyncImage(url: URL(string: dog.url)) { phase in
                             switch phase {
                             case .success(let image):
@@ -41,12 +39,19 @@ struct RandomDogView: View {
                         
                         if let breed = dog.breeds.first {
                             Text("\(breed.name)")
+                                .font(.headline)
+//                            Text("Bred for: \(breed.bred_for)")
+//                            Text("Breed group: \(breed.breed_group)")
+                            Text("Life span: \(breed.life_span)")
+                            Text("Temperament: \(breed.temperament)")
                         }
                     }
+                    
+                } else {
+                    ProgressView()
                 }
-            } else {
-                ProgressView()
             }
+            .navigationBarTitle("Dog of the moment", displayMode: .inline)
         }
         .onAppear() {
             Api().loadData { (dogs) in

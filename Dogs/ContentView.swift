@@ -9,13 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var isActiveDogView: Bool = false
-    @State private var isActiveDogDetailView: Bool = false
-    
-    @State var dogs = [Dog]()
-    
-    @State var selectedDog: Dog?
-    
+    @State private var showToolbar = false
+ 
     var body: some View {
         
         NavigationSplitView {
@@ -27,11 +22,21 @@ struct ContentView: View {
             //            Text("Choose a store")
             //        } 
                 .toolbar {
-                    ToolbarItemGroup(placement: .bottomBar) {
-                        NavigationLink(destination: RandomDogView()) {
-                            Text("Dog of the moment")
+                    if showToolbar {
+                        ToolbarItemGroup(placement: .bottomBar) {
+                            NavigationLink(destination: RandomDogView()) {
+                                Text("Dog of the moment")
+                            }
+                            
                         }
-                        
+                    }
+                }
+                .onAppear {
+                    // Start een timer van 10 seconden om de toolbar te laten verschijnen
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+                        withAnimation {
+                            showToolbar = true
+                        }
                     }
                 }
         } detail: {

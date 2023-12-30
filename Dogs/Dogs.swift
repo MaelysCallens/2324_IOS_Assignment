@@ -17,7 +17,7 @@ struct Dog: Decodable, Identifiable {
         //let bred_for: String
         //let breed_group: String
         let life_span: String
-        //let temperament: String
+        let temperament: String
     }
 }
 
@@ -36,6 +36,5 @@ class Api : ObservableObject{
                 completion(dogs)
             }
         }.resume()
-        
     }
 }
