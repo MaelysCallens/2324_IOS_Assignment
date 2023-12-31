@@ -27,6 +27,9 @@ struct ContentView: View {
                             NavigationLink(destination: RandomDogView()) {
                                 Text("Dog of the moment")
                             }
+                            NavigationLink(destination: CatView()) {
+                                Text("Cats")
+                            }
                             
                         }
                     }

@@ -13,6 +13,8 @@
 		616172FC2B3EF58300B58FFF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 616172FB2B3EF58300B58FFF /* Preview Assets.xcassets */; };
 		616173032B3EF71B00B58FFF /* Dogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616173022B3EF71A00B58FFF /* Dogs.swift */; };
 		616173062B3F23EF00B58FFF /* DogDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616173052B3F23EF00B58FFF /* DogDetailView.swift */; };
+		616CA6F52B41599500462CE0 /* Cats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616CA6F42B41599500462CE0 /* Cats.swift */; };
+		616CA6F72B4159FB00462CE0 /* CatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616CA6F62B4159FB00462CE0 /* CatView.swift */; };
 		617AF5092B4004960080FBAC /* DogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617AF5082B4004960080FBAC /* DogView.swift */; };
 		617AF50B2B401CB10080FBAC /* RandomDogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617AF50A2B401CB10080FBAC /* RandomDogView.swift */; };
 /* End PBXBuildFile section */
@@ -26,6 +28,8 @@
 		616173022B3EF71A00B58FFF /* Dogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dogs.swift; sourceTree = "<group>"; };
 		616173042B3F210D00B58FFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		616173052B3F23EF00B58FFF /* DogDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogDetailView.swift; sourceTree = "<group>"; };
+		616CA6F42B41599500462CE0 /* Cats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cats.swift; sourceTree = SOURCE_ROOT; };
+		616CA6F62B4159FB00462CE0 /* CatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatView.swift; sourceTree = SOURCE_ROOT; };
 		617AF5082B4004960080FBAC /* DogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogView.swift; sourceTree = "<group>"; };
 		617AF50A2B401CB10080FBAC /* RandomDogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomDogView.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -64,10 +68,12 @@
 				616172F42B3EF57D00B58FFF /* DogsApp.swift */,
 				616172F62B3EF57D00B58FFF /* ContentView.swift */,
 				617AF5082B4004960080FBAC /* DogView.swift */,
+				616CA6F62B4159FB00462CE0 /* CatView.swift */,
 				616173052B3F23EF00B58FFF /* DogDetailView.swift */,
 				617AF50A2B401CB10080FBAC /* RandomDogView.swift */,
 				616172F82B3EF58300B58FFF /* Assets.xcassets */,
 				616173022B3EF71A00B58FFF /* Dogs.swift */,
+				616CA6F42B41599500462CE0 /* Cats.swift */,
 				616172FA2B3EF58300B58FFF /* Preview Content */,
 			);
 			path = Dogs;
@@ -154,7 +160,9 @@
 				617AF50B2B401CB10080FBAC /* RandomDogView.swift in Sources */,
 				616172F72B3EF57D00B58FFF /* ContentView.swift in Sources */,
 				617AF5092B4004960080FBAC /* DogView.swift in Sources */,
+				616CA6F72B4159FB00462CE0 /* CatView.swift in Sources */,
 				616173032B3EF71B00B58FFF /* Dogs.swift in Sources */,
+				616CA6F52B41599500462CE0 /* Cats.swift in Sources */,
 				616173062B3F23EF00B58FFF /* DogDetailView.swift in Sources */,
 				616172F52B3EF57D00B58FFF /* DogsApp.swift in Sources */,
 			);

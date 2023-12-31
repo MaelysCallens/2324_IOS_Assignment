@@ -15,9 +15,9 @@ struct RandomDogView: View {
     
     var body: some View {
         NavigationView {
-            VStack(alignment: .leading, spacing: 10) {
+            VStack {
                 if let dog = dogs.first {
-                    VStack(alignment: .leading, spacing: 10) {
+                    VStack {
                         AsyncImage(url: URL(string: dog.url)) { phase in
                             switch phase {
                             case .success(let image):
@@ -25,25 +25,31 @@ struct RandomDogView: View {
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .frame(width: 350, height: 350)
+                            //the image won't load
                             case .failure:
                                 Image(systemName: "photo")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .frame(width: 350, height: 350)
+                            //no image is loaded
                             case .empty:
+                                //A view that shows the progress toward completion of a task.
                                 ProgressView()
+                            //something unexpected happened
                             @unknown default:
+                                //A view that doesn’t contain any content.
                                 EmptyView()
                             }
                         }
-                        
-                        if let breed = dog.breeds.first {
-                            Text("\(breed.name)")
-                                .font(.headline)
-//                            Text("Bred for: \(breed.bred_for)")
-//                            Text("Breed group: \(breed.breed_group)")
-                            Text("Life span: \(breed.life_span)")
-                            Text("Temperament: \(breed.temperament)")
+                        VStack(alignment: .leading, spacing: 10) {
+                            if let breed = dog.breeds.first {
+                                Text("\(breed.name)")
+                                    .font(.headline)
+                                //                            Text("Bred for: \(breed.bred_for)")
+                                //                            Text("Breed group: \(breed.breed_group)")
+                                Text("Life span: \(breed.life_span)")
+                                Text("Temperament: \(breed.temperament)")
+                            }
                         }
                     }
                     

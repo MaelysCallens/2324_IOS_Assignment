@@ -12,53 +12,54 @@ struct DogDetailView: View {
 //    @Binding var dog: Dog
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("Hello world")
         
-//        NavigationView {
-//                    VStack(alignment: .leading, spacing: 16) {
-////                        // Naam van het ras
-////                        Text("Name: \($dog.breed.name)")
-////                            .font(.title)
-//                        
-//                        // Afbeelding van de hond
-//                        AsyncImage(url: URL(string: dog.url)) { phase in
-//                            switch phase {
-//                            case .success(let image):
-//                                image
-//                                    .resizable()
-//                                    .aspectRatio(contentMode: .fit)
-//                                    .frame(height: 250)
-//                            case .failure:
-//                                Image(systemName: "photo")
-//                                    .resizable()
-//                                    .aspectRatio(contentMode: .fit)
-//                                    .frame(height: 250)
-//                            case .empty:
-//                                ProgressView()
-//                                    .frame(height: 250)
-//                            @unknown default:
-//                                EmptyView()
-//                            }
-//                        }
-//                        
-////                        //let bred_for: String
-////                        Text("Bred for: \($dog.breed.bred_for)")
-////                        
-////                        //let breed_group: String
-////                        Text("Breed group: \($dog.breed.breed_group)")
-////
-////                        // Levensduur van het ras
-////                        Text("Life Span: \($dog.breed.life_span)")
-////                        
-////                        //let temperament: String
-////                        Text("Temperament: \($dog.breed.temperament)")
-//                    }
-//                    .padding()
-//                    .navigationBarTitle(Text("Dog Details"), displayMode: .inline)
+//        VStack {
+//            AsyncImage(url: URL(string: dog.url)) { phase in
+//                switch phase {
+//                case .success(let image):
+//                    image
+//                        .resizable()
+//                        .aspectRatio(contentMode: .fit)
+//                        .frame(width: 350, height: 350)
+//                case .failure:
+//                    Image(systemName: "photo")
+//                        .resizable()
+//                        .aspectRatio(contentMode: .fit)
+//                        .frame(width: 350, height: 350)
+//                case .empty:
+//                    ProgressView()
+//                @unknown default:
+//                    EmptyView()
 //                }
-            }
-        }
+//            }
+//            VStack(alignment: .leading, spacing: 10) {
+//                if let breed = dog.breeds.first {
+//                    Text("\(breed.name)")
+//                        .font(.headline)
+//                    //                            Text("Bred for: \(breed.bred_for)")
+//                    //                            Text("Breed group: \(breed.breed_group)")
+//                    Text("Life span: \(breed.life_span)")
+//                    Text("Temperament: \(breed.temperament)")
+//                }
+//            }
+//        }
+    }
+}
 
 #Preview {
     DogDetailView()
 }
+
+//struct DogDetailView_Previews: PreviewProvider {
+//    struct Preview: View {
+//        @State private var dog = Dog.first!
+//        var body: some View {
+//            DogDetailView(dog: $dog)
+//        }
+//    }
+//    
+//    static var previews: some View {
+//        Preview()
+//    }
+//}
